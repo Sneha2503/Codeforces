@@ -1,0 +1,32 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int q;
+    string s,t;
+    cin>>q;
+    while(q--){
+        cin>>s;
+        cin>>t;
+        std::sort(std::begin(s), std::end(s));
+        auto last = std::unique(std::begin(s), std::end(s));
+        s.erase(last, std::end(s));
+        std::sort(std::begin(s), std::end(s));
+        
+        std::sort(std::begin(t), std::end(t));
+        auto lastt = std::unique(std::begin(t), std::end(t));
+        t.erase(lastt, std::end(t));
+        std::sort(std::begin(t), std::end(t));
+        
+        if(s==t){
+            cout<<"YES";
+        }
+        else{
+            cout<<"NO";
+        }
+    }
+
+    return 0;
+}
